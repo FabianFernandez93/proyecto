@@ -11,10 +11,10 @@
             VALUES('$nombre_completo', '$correo', '$usuario', '$contrasena')";
             
     //Verificar que correo no se repita
+    
+    $verificar_correo = mysqli_query($conexion, "SELECT * FROM usuarios WHERE correo='$correo'");
 
-    /*
-    $verificar_correo = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuarios = correo='$correo' ");
-
+    
     if(mysqli_num_rows($verificar_correo) > 0) {
         echo '
             <script> 
@@ -24,9 +24,9 @@
         ';
         exit();
     }
-
+    
     // Verificar que el nombre de usuario no se repita 
-    $verificar_usuario = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario = usuario='$usuario' ");
+    $verificar_usuario = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario='$usuario' ");
 
     if(mysqli_num_rows($verificar_usuario) > 0) {
         echo '
@@ -37,7 +37,7 @@
         ';
         exit();
     }
-    */
+    
 
     $ejecutar = mysqli_query($conexion, $query);
 
