@@ -13,6 +13,8 @@
         session_destroy();
         die();
     }
+
+ 
 ?>
 
 
