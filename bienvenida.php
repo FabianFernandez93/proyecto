@@ -27,6 +27,7 @@
 </head>
 <body> 
     <h1>PROBANDO LA PAGINA DE BIENVENIDA</h1>
+    <a href="php/cerrar_sesion.php">Cerrar sesión</a>
     
 </body>
 </html>
