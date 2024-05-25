@@ -1,3 +1,19 @@
+<?php
+
+    session_start();
+
+    if(isset($_SESSION['usuario'])){
+        echo '
+            <script> 
+                window.location = "bienvenida.php";
+            </script>            
+        ';  
+        die();
+    } 
+?>
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +33,7 @@
                     <h3>¿Ya tienes cuenta?</h3>
                     <p>Inicia sesion para entrar en la pagina</p>
                     <button id="btn__iniciar-sesion">Iniciar Sesión</button>
+                    <button id="btn__recuperar-contraseña">Recuperar Contraseña</button>
                 </div>
                 <div class="caja__trasera-register">
                     <h3>¿Aun no tienes una cuenta??</h3>
@@ -32,6 +49,7 @@
                     <input type="text" placeholder="correo electronico" name="correo">
                     <input type="password" placeholder="contraseña" name="contrasena">
                     <button>Entrar</button>
+                    <button>Recuperar Contraseña</button>
                 </form>
                 <!--Registro-->
                 <form action="php/registro_usuario_be.php" method="POST" class="formulario__register">
