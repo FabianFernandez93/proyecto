@@ -30,7 +30,8 @@
                     <h3>¿Ya tienes cuenta?</h3>
                     <p>Inicia sesion para entrar en la pagina</p>
                     <button id="btn__iniciar-sesion">Iniciar Sesión</button>
-                    <button id="btn__recuperar-contraseña">Recuperar Contraseña</button>
+                    <!--<button id="btn__recuperar-contraseña">Recuperar Contraseña</button>  --> 
+                    <!-- No es necesaria esa linea de codigo ya que en el otro div se puede recuperar la contraseña -->
                 </div>
                 <div class="caja__trasera-register">
                     <h3>¿Aun no tienes una cuenta??</h3>
@@ -45,8 +46,8 @@
                     <h2>Iniciar sesión</h2>
                     <input type="text" placeholder="correo electronico" name="correo">
                     <input type="password" placeholder="contraseña" name="contrasena">
-                    <button>Entrar</button>
-                    <button>Recuperar Contraseña</button>
+                    <button type="submit">Entrar</button>
+                    <button type="button" onclick="recuperarContrasena()">Recuperar Contraseña</button>
                 </form>
                 <!--Registro-->
                 <form action="php/registro_usuario_be.php" method="POST" class="formulario__register">
