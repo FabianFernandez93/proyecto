@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+body {
+    background-image: url('../images/index.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh; /* Ocupa el 100% de la altura del viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor_todo {
+    background-image: url('../images/index.png');
+    width: 100%;
+    max-width: 800px;
+    height: 80vh; /* Ajusta la altura según tus necesidades */
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.caja__trasera {
+    display: flex; /* Utiliza Flexbox para dividir el espacio */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo blanco transparente */
+    border: 2px solid #00BFFF; /* Borde de color medio azulado */
+    box-sizing: border-box; /* Asegura que el borde esté incluido en las dimensiones totales */
+    border-radius: 10px; /* Opcional: añade bordes redondeados */
+    padding: 20px; /* Opcional: añade un poco de espacio interno */
+}
+
+.instrucciones {
+  
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    width: 50%; /* Ocupa el 50% del ancho del contenedor padre */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+    padding: 20px; /* Agrega algo de padding para que el contenido no toque los bordes */
+    color: white; /* Cambia el color del texto para que sea legible sobre la imagen */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.instrucciones, .caja__login {
+    width: 45%; /* Ancho del 45% del contenedor padre */
+    margin: 10px; /* Añade margen entre los bloques */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.2); /* Fondo negro semi-transparente */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Texto blanco */
+    text-align: center; /* Centra el texto dentro de los contenedores */
+}
+.caja__login {
+    width: 50%; /* Cada hijo tomará el 50% del ancho del contenedor */
+    box-sizing: border-box; /* Asegura que el padding y el border se incluyan en el ancho total */
+    padding: 20px; /* Espaciado interno */
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 200px;
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+#btn_instrucciones {
+    background-color: #ff5722; /* Fondo naranjo */
+    color: white; /* Texto blanco */
+}
+
+#btn_login {
+    background-color: #4caf50; /* Fondo verde */
+    color: white; /* Texto blanco */
+}
+
+#btn_cliente_empresa {
+    background-color: #2196f3; /* Fondo azul */
+    color: white; /* Texto blanco */
+}
+
+#btn_recuperar {
+    background-color: #f44336; /* Fondo rojo */
+    color: white; /* Texto blanco */
+}
+
+button:hover {
+    opacity: 0.8; /* Opacidad al pasar el ratón */
+}

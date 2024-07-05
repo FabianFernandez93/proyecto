@@ -14,7 +14,7 @@ $validar_login = mysqli_query($conexion, "SELECT * FROM trabajador WHERE email='
 
 if(mysqli_num_rows($validar_login) > 0){
     $_SESSION['usuario'] = $email;
-    header("location: ../bienvenida_trabajador.php");
+    header("location: ../bienvenida_cliente_empresa.php");
     exit();
 }else{
     echo '

@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color:#6f44d4; /* Fondo morado */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Color de texto blanco para contraste */
+    flex-direction: column;
+}
+
+a h1 {
+    color: white; /* Color del texto del enlace */
+    margin-bottom: 20px;
+    text-decoration: none; /* Quita el subrayado del enlace */
+    transition: color 0.3s ease;
+}
+
+a h1:hover {
+    color: #ff5722; /* Color al pasar el ratón */
+}
+
+.contenedor_todo {
+    width: 90%;
+    max-width: 800px; /* Tamaño máximo del contenedor */
+    background: rgba(255, 255, 255, 0.1); /* Fondo blanco semi-transparente */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.caja__trasera {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas si es necesario */
+}
+
+.instrucciones, .caja__login {
+    width: 45%; /* Ancho del 45% del contenedor padre */
+    margin: 10px; /* Añade margen entre los bloques */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.2); /* Fondo negro semi-transparente */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Texto blanco */
+}
+
+.instrucciones h3, .caja__login h3 {
+    margin-bottom: 15px;
+}
+
+.formulario_login, .caja__login form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #4caf50; /* Fondo verde */
+    color: white; /* Texto blanco */
+}
+
+button:hover {
+    background-color: #45a049; /* Fondo verde oscuro al pasar el ratón */
+}

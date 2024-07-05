@@ -1,66 +1,38 @@
-<?php
-
-    session_start();
-
-    if(isset($_SESSION['usuario'])){
-        echo '
-            <script> 
-                window.location = "bienvenida.php";
-            </script>            
-        ';  
-        die();
-    } 
-?>
-
+s
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <!-- <meta http-equiv="refresh" content="2">  -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login y Registro</title>
-    <link rel="stylesheet" href="assets/css/estilos.css">
+    <link rel="stylesheet" href="assets/css/estilos2.css">
 </head>
-<body>
-    <main>
 
-        <div class="contenedor_todo">
-            <div class="caja__trasera">
-                <div class="caja__trasera-login">
-                    <h3>¿Ya tienes cuenta?</h3>
-                    <p>Inicia sesion para entrar en la pagina</p>
-                    <button id="btn__iniciar-sesion">Iniciar Sesión</button>
-                    <!--<button id="btn__recuperar-contraseña">Recuperar Contraseña</button>  --> 
-                    <!-- No es necesaria esa linea de codigo ya que en el otro div se puede recuperar la contraseña -->
-                </div>
-                <div class="caja__trasera-register">
-                    <h3>¿Aun no tienes una cuenta??</h3>
-                    <p>Registrate para que puedas Iniciar Sesión</p>
-                    <button id="btn__registrarse">Registrarse</button>
-                </div>
+<body>
+    <div class="contenedor_todo">
+        <div class="caja__trasera">
+            <div class="instrucciones">
+                <h3>¿Nuevo en Registro/Trabajadores?</h3>
+                <p>Pincha en el siguiente botón para ver las instrucciones</p>
+                <a href="instrucciones.pdf" download>
+                    <button id="btn_instrucciones">Instrucciones</button>
+                </a>
+                <a href="manual_de_uso.pdf" download>
+                    <button id="btn_manual">Manual de uso descargar</button>
+                </a>
             </div>
-            <!--Formulario de Login y Registro-->
-            <div class="contenedor__login-register">
-                <!--Login-->
-                <form action="php/login_usuario_be.php" method="POST" class="formulario__login">
-                    <h2>Iniciar sesión</h2>
-                    <input type="text" placeholder="correo electronico" name="correo">
-                    <input type="password" placeholder="contraseña" name="contrasena">
-                    <button type="submit">Entrar</button>
-                    <button type="button" onclick="recuperarContrasena()">Recuperar Contraseña</button>
-                </form>
-                <!--Registro-->
-                <form action="php/registro_usuario_be.php" method="POST" class="formulario__register">
-                    <h2>Registrarse</h2>
-                    <input type="text" placeholder="Nombre Completo" name="nombre_completo">
-                    <input type="text" placeholder="Correo electronico" name="correo">
-                    <input type="text" placeholder="Usuario" name="usuario">
-                    <input type="password" placeholder="contraseña" name="contrasena">
-                    <button>Registrarse</button>
-                </form>
+            <div class="caja__login">
+                <h3>¿Ya tienes una cuenta?</h3>
+                <p>Ingresa tu perfil para que puedas iniciar sesión</p>
+                <button id="btn_login" onclick="location.href='login_trabajador.html'">Iniciar sesión</button>
+                <button id="btn_cliente_empresa" onclick="location.href='login_cliente_empresa.html'">Cliente
+                    Empresa</button>
+                <button id="btn_recuperar" onclick="location.href='recuperar_contrasena.html'">Recuperar
+                    Contraseña</button>
             </div>
         </div>
-    </main>
-    <script src="assets/js/scrip.js" ></script>
+    </div>
 </body>
+
 </html>

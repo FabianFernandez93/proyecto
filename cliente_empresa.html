@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliente Empresa</title>
+    <link rel="stylesheet" href="assets/css/estilos_cli_emp.css">
+</head>
+
+<body>
+    <a href="index.php">
+        <h1>Volver</h1>
+    </a>
+    <div class="contenedor_todo">
+        <div class="caja__trasera">
+            <div class="instrucciones">
+                <h3>Iniciar Sesión Como trabajador</h3>
+                <p>Aquí se muestra la información del cliente de la empresa.</p>
+                <h3>Iniciar Sesión Como Cliente</h3>
+                <form action="php/login_usuario_be.php" method="POST" class="formulario_login">
+                    <h2>Iniciar sesión</h2>
+                    <input type="text" placeholder="correo electronico" name="correo">
+                    <input type="password" placeholder="contraseña" name="contrasena">
+                    <button type="submit">Entrar</button>
+                </form> <!-- Añade la información relevante del cliente aquí -->
+            </div>
+            <div class="caja__login">
+                <h3>Información del Cliente</h3>
+                <p>Acá se detalla que tipo de usuario es y su información.</p>
+                <form action="php/registro_usuario_be.php" method="POST">
+                    <h2>Registrar un trabajador</h2>
+                    <input type="text" placeholder="Nombre Completo" name="nombre_completo">
+                    <input type="text" placeholder="Rut Trabajador" name="rut_trabajador">
+                    <input type="text" placeholder="email" name="email">
+                    <input type="password" placeholder="contraseña" name="contrasena">
+                    <button type="submit">registrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

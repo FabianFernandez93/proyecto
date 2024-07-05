@@ -1,45 +1,45 @@
 <?php
 
-    include 'conexion_be.php';
+    include 'conexion_be.php';  // Incluir archivo de conexión
 
-    $nombre_completo = $_POST['nombre_completo'];
-    $correo = $_POST['correo'];
-    $usuario = $_POST['usuario'];
+    if (!$conexion) {
+    die('Error de conexión: ' . mysqli_connect_error());
+    }
+
+    // Resto del código para insertar en la base de datos
+
+
+    $nombre_trabajador = $_POST['nombre_completo'];
+    $rut_trabajador = $_POST['rut_trabajador'];
+    $email = $_POST['email'];
+    $direccion = '';
+    $numero_direccion = '';
+    $telefono = '';
+    $telefono_emergencia = '';
+    $fecha_nacimiento = '';
+    $fecha_contratacion = '';
+    $id_jornada_laboral = '1';
+    $id_empresa = '1';
+    $id_departamento = '1';
+    $id_cargo = '1';
+    $id_prevision_social = '';
+    $id_carga_familiar = '';
+    $id_region = '1';
+    $id_ciudad = '1';
+    $id_comuna = '1';
     $contrasena = $_POST['contrasena'];
     //Encriptando contraseña 
-    $contrasena = hash('sha512', $contrasena);
+    //$contrasena = hash('sha512', $contrasena);
 
-    $query = "INSERT INTO usuarios(nombre_completo, correo, usuario, contrasena) 
-            VALUES('$nombre_completo', '$correo', '$usuario', '$contrasena')";
-            
-    //Verificar que correo no se repita
-    
-    $verificar_correo = mysqli_query($conexion, "SELECT * FROM usuarios WHERE correo='$correo'");
-
-    
-    if(mysqli_num_rows($verificar_correo) > 0) {
-        echo '
-            <script> 
-                alert("Este correo ya está registrado, intenta con otro diferente");
-                window.location = "../index.php";
-            </script>            
-        ';
-        exit();
-    }
-    
-    // Verificar que el nombre de usuario no se repita 
-    $verificar_usuario = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario='$usuario' ");
-
-    if(mysqli_num_rows($verificar_usuario) > 0) {
-        echo '
-            <script> 
-                alert("Este usuario ya está registrado, intenta con otro diferente");
-                window.location = "../index.php";
-            </script>            
-        ';
-        exit();
-    }
-    
+    $query = "INSERT INTO trabajador (nombre_trabajador, rut_trabajador, email, direccion, numero_direccion, 
+                                    telefono, telefono_emergencia, fecha_nacimiento, fecha_contratacion, id_jornada_laboral,
+                                    id_empresa, id_departamento, id_cargo, id_prevision_social, id_carga_familiar, id_region,
+                                    id_ciudad, id_comuna, contrasena)
+                                     VALUES('$nombre_trabajador', '$rut_trabajador', '$email',
+                                    '$direccion', '$numero_direccion', '$telefono', '$telefono_emergencia', '$fecha_nacimiento',
+                                    '$fecha_contratacion', '$id_jornada_laboral', '$id_empresa', '$id_departamento',
+                                    '$id_cargo', '$id_prevision_social', '$id_carga_familiar', '$id_region', '$id_ciudad', 
+                                    '$id_comuna', '$contrasena')";
 
     $ejecutar = mysqli_query($conexion, $query);
 
@@ -50,6 +50,13 @@
                 window.location = "../index.php";
             </script>            
         ';
+    }else{
+        echo '
+        <script> 
+            alert("Intentalo de nuevo, usuario no almacenado");
+            window.location = "../index.php";
+        </script>            
+    ';
     }
 
     mysqli_close($conexion);
